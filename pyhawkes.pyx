@@ -13,7 +13,7 @@ DEFINITIONS
 
 
 DTYPE = np.double
-ITYPE = np.int
+ITYPE = np.int32
 ctypedef np.double_t DTYPE_t
 ctypedef np.int_t ITYPE_t
 ctypedef double (*cfunction) (int loc, double t)
@@ -278,7 +278,7 @@ def sim_power_hawkes(np.ndarray[dtype=double, ndim=1, mode="c"] mu not None,
         double clength = length
         np.ndarray[double, ndim = 2, mode = 'c'] events = \
             np.ascontiguousarray(np.zeros((dim, limit), dtype = DTYPE))
-        np.ndarray[int, ndim = 1, mode = 'c'] tracker = \
+        np.ndarray[np.int_t, ndim = 1, mode = 'c'] tracker = \
             np.ascontiguousarray(np.zeros(dim, dtype = ITYPE))
 
     pyhawkes.simulate_power_hawkes(&mu[0], &rho[0,0], &m[0,0], &M[0,0],

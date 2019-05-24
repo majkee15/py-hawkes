@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include<string>
 
 /*
 Function that checks for stationarity of a d-dimensional Hawkes process 
